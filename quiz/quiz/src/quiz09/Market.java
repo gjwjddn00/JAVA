@@ -25,8 +25,9 @@ package quiz09;
  */
 public class Market {
     // [멤버변수] 스캔된 상품을 담는 고정 배열 저장소 (100칸)
-
+    private Product[] products = new Product[100];
     // [멤버변수] 현재 저장된 상품 개수
+    private int index = 0;
 
 
     /*
@@ -34,12 +35,36 @@ public class Market {
      * [메서드] 바코드 스캔: 상품 정보를 출력하고 내부 배열에 저장한다.
      * - null 이면 오류 메시지만 출력하고 저장하지 않음
      */
+    public void barcode(Product product) {
+        if(product == null) {
+            System.out.println("없는 상품입니다");
+            return;
+        }
 
+        if(index == products.length - 1) {
+            System.out.println("상품을 넣을 공간이 없습니다");
+            return;
+        }
+
+        System.out.println("상품" + product.getName() + ", 가격" + product.getPrice());
+        products[index] = product;
+        index++;
+    }
 
     /*
     *
      * [메서드] 지금까지 저장된 모든 상품을 출력한다.
      * - 비어 있으면 안내 메시지 출력
      */
+    public void printAll() {
+        
+        if(index == 0){
+            System.out.println("저장된 상품이 없습니다");
+        }
+        
+        for(int i = 0; i < index; i++) {
+            System.out.println((i + 1) + "번" + products[i].getName() + ", 가격" + products[i].getPrice());
+        }
+    }
 
 }
