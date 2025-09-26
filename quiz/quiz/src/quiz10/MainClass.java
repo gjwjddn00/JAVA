@@ -1,10 +1,12 @@
 package quiz10;
 
-import static quiz10.MyArrays.toStringArray;
+import java.util.Arrays;
 
 public class MainClass {
     public static void main(String[] args) {
-        int[] MyArrays = new int[0];
-        System.out.println(toStringArray(MyArrays));
+
+        int[] arr = {1,2,3,4,5};
+        System.out.println( MyArrays.toStringArray(arr)  );
+        System.out.println( Arrays.toString(arr)   );
     }
 }

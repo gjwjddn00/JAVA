@@ -1,27 +1,44 @@
 package quiz12;
 
-public class Unit {
+public abstract class Unit {
     private int x;
     private int y;
     private int hp;
 
-    Unit(int x, int y, int hp) {
+    //생성자
+    public Unit(int x, int y, int hp) {
         this.x = x;
         this.y = y;
         this.hp = hp;
     }
-    
-    public void Location() {
-        System.out.println("현재 위치: " + x + " " + y);
+
+
+    public abstract void location();
+    public abstract void stop();
+    public abstract void move();
+
+    public int getHp() {
+        return hp;
     }
-    
-    public void Move(int x, int y) {
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
         this.x = x;
-        this.y = y;
-        System.out.println("이동 완료: " + x + " " + y);
     }
-    
-    public void Stop() {
-        System.out.println("멈춤");
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }
+

@@ -27,24 +27,33 @@ public class MainClass {
         house.personInfo(t1); //선생
         house.personInfo(t2); //선생
         house.personInfo(e1); //직원
+
         house.personsInfo(arr); //펄슨 배열
 
-        System.out.println("---------------------------------");
+        System.out.println("---------------------------");
 
         printPerson(s1);
     }
+
+    //
     public static void printPerson(Person p) {
 
-        if(p instanceof Employee) { //emp타입이였다면 true, 아니면 false
+        if(p instanceof Employee) { //emp타입이었다면 true, 아니면 fasle
             Employee e = (Employee)p;
             System.out.println(e.info());
+
         } else if(p instanceof Teacher) {
             Teacher t = (Teacher)p;
             System.out.println(t.info());
+
         } else if(p instanceof Student) {
             Student s = (Student)p;
             System.out.println(s.info());
-
         }
+
+
     }
+
+
+
 }

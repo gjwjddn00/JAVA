@@ -3,27 +3,26 @@ package day08.abs.good;
 public class MainClass {
     public static void main(String[] args) {
 
-        Store store = new Store() {
-            @Override
-            public void chicken1() {
+        /*
+        다형성 처럼 사용도 됨!!!
 
-            }
+        자식클래스를 사용해서 부모클래스를 구체화 해서 사용합니다.
+        */
 
-            @Override
-            public void chicken2() {
-
-            }
-
-            @Override
-            public void chicken3() {
-
-            }
-        };
-        //다형성 처럼 사용해도 됨
+        Store store = new SeoulStore();
         store.chicken1();
         store.chicken2();
         store.chicken3();
         store.info();
-        System.out.println("이름" + store.storeName);
+        System.out.println("이름:" + store.storeName);
+
+        Store busanStore = new BusanStore();
+        busanStore.chicken1();
+        busanStore.chicken2();
+        busanStore.chicken3();
+        busanStore.info();
+        System.out.println("이름:" + busanStore.storeName);
+
+
     }
 }

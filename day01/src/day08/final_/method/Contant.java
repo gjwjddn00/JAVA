@@ -1,4 +1,4 @@
-package day08.final_method;
+package day08.final_.method;
 
 public class Contant {
 
@@ -6,4 +6,3 @@ public class Contant {
     public static final double PI = 3.14;
     public static final int EARTH_RADIUS = 6400;
 }
-;
